@@ -7,6 +7,10 @@ Parameters:
     Type: String
   Image:
     Type: String
+  InstanceType:
+    Type: String
+  InitialInstanceCount:
+    Type: Number
 
 Resources:
 
@@ -21,3 +25,14 @@ Resources:
         Mode: "SingleModel"
         ModelDataUrl: 
           Ref: ModelDataUrl
+
+  EndpointConfig:
+    Type: AWS::SageMaker::EndpointConfig
+    Properties:
+      ProductionVariants: # Required
+        - InitialInstanceCount:
+            Ref: InitialInstanceCount
+          InstanceType:
+            Ref: InstanceType
+          ModelName:
+            Ref: Model
