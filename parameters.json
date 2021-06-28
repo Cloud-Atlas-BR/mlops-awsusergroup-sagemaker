@@ -4,7 +4,7 @@
         "ModelDataUrl": "s3://sagemaker-us-east-1-885248014373/output/xgboost-2021-06-28-23-08-14-913/output/model.tar.gz",
         "Image": "811284229777.dkr.ecr.us-east-1.amazonaws.com/xgboost:latest",
         "InitialInstanceCount": "1",
-        "InstanceType": "ml.m5.large"
-
+        "InstanceType": "ml.m5.large",
+        "Project": "iris"
     }
 }

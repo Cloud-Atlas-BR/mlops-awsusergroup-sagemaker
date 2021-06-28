@@ -11,6 +11,8 @@ Parameters:
     Type: String
   InitialInstanceCount:
     Type: String
+  Project:
+    Type: String
 
 Resources:
 
@@ -36,3 +38,5 @@ Resources:
             Ref: InstanceType
           ModelName: 
             Fn::GetAtt: Model.ModelName
+          VariantName:
+            Ref: Project
