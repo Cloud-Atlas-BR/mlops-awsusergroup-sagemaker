@@ -10,7 +10,7 @@ Parameters:
   InstanceType:
     Type: String
   InitialInstanceCount:
-    Type: Number
+    Type: String
 
 Resources:
 
