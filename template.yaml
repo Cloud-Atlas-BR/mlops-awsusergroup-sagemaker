@@ -34,5 +34,5 @@ Resources:
             Ref: InitialInstanceCount
           InstanceType:
             Ref: InstanceType
-          ModelName:
-            Ref: Model
+          ModelName: 
+            Fn::GetAtt: Model.ModelName
