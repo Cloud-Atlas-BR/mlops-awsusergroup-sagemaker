@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: 2010-09-09
+  
+Parameters:
+  ExecutionRoleArn:
+    Type: String
+  ModelDataUrl:
+    Type: String
+  Image:
+    Type: String
+
+Resources:
+
+  Model:
+    Type: AWS::SageMaker::Model
+    Properties:
+      ExecutionRoleArn:
+        Ref: ExecutionRoleArn
+      PrimaryContainer:
+        Image:
+          Ref: Image
+        Mode: "SingleModel"
+        ModelDataUrl: 
+          Ref: ModelDataUrl
