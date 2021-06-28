@@ -41,3 +41,8 @@ Resources:
           VariantName:
             Ref: Project
           InitialVariantWeight: 1
+
+  Endpoint:
+    Type: AWS::SageMaker::Endpoint
+    Properties:
+      EndpointConfigName: !GetAtt EndpointConfig.EndpointConfigName
