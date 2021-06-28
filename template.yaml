@@ -40,3 +40,4 @@ Resources:
             Fn::GetAtt: Model.ModelName
           VariantName:
             Ref: Project
+          InitialVariantWeight: 1
