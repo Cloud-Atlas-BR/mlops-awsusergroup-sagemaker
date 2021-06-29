@@ -3,13 +3,9 @@ import sagemaker
 session = sagemaker.Session()
 region_name = session.boto_region_name
 
-container_image = sagemaker.image_uris.retrieve(
-    framework="xgboost",
-    region=region_name,
-    version="latest"
-)
+container_image = "811284229777.dkr.ecr.us-east-1.amazonaws.com/xgboost:latest"
 
-bucket = session.default_bucket()
+bucket = "sagemaker-us-east-1-885248014373"
 
 role = "arn:aws:iam::885248014373:role/service-role/AmazonSageMaker-ExecutionRole-20210305T230941"
 
