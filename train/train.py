@@ -1,5 +1,7 @@
-import sagemaker
 import json
+import sagemaker
+from sagemaker.inputs import TrainingInput
+from sagemaker.estimator import Estimator
 
 session = sagemaker.Session()
 region_name = session.boto_region_name
@@ -12,10 +14,10 @@ role = "arn:aws:iam::885248014373:role/service-role/AmazonSageMaker-ExecutionRol
 
 uploaded_data = "s3://sagemaker-us-east-1-885248014373/training/data.csv"
 
-input_data = sagemaker.inputs.TrainingInput(s3_data=uploaded_data,
+input_data = TrainingInput(s3_data=uploaded_data,
                                             content_type="text/csv")
 
-xgboost = sagemaker.estimator.Estimator(
+xgboost = Estimator(
     image_uri=container_image,
     role=role,
     instance_type="ml.m5.large", 
