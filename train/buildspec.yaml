@@ -6,6 +6,7 @@ phases:
       python: 3.7
   build:
     commands:
+      - cd train
       - pip3 install -r reqs.txt
       - chmod +x train.py
       - python3 train.py
