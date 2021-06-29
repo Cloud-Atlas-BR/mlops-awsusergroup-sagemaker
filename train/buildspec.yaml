@@ -6,7 +6,9 @@ phases:
       python: 3.7
   build:
     commands:
-      - ls -lah 
+      - pip3 install -r reqs.txt
+      - chmod +x train.py
+      - python3 train.py
 artifacts:
   files:
     - '**/*'
