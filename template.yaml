@@ -28,21 +28,21 @@ Resources:
         ModelDataUrl: 
           Ref: ModelDataUrl
 
-  EndpointConfig:
-    Type: AWS::SageMaker::EndpointConfig
-    Properties:
-      ProductionVariants: # Required
-        - InitialInstanceCount:
-            Ref: InitialInstanceCount
-          InstanceType:
-            Ref: InstanceType
-          ModelName: 
-            Fn::GetAtt: Model.ModelName
-          VariantName:
-            Ref: Project
-          InitialVariantWeight: 1
+  # EndpointConfig:
+  #   Type: AWS::SageMaker::EndpointConfig
+  #   Properties:
+  #     ProductionVariants:
+  #       - InitialInstanceCount:
+  #           Ref: InitialInstanceCount
+  #         InstanceType:
+  #           Ref: InstanceType
+  #         ModelName: 
+  #           Fn::GetAtt: Model.ModelName
+  #         VariantName:
+  #           Ref: Project
+  #         InitialVariantWeight: 1
 
-  Endpoint:
-    Type: AWS::SageMaker::Endpoint
-    Properties:
-      EndpointConfigName: !GetAtt EndpointConfig.EndpointConfigName
+  # Endpoint:
+  #   Type: AWS::SageMaker::Endpoint
+  #   Properties:
+  #     EndpointConfigName: !GetAtt EndpointConfig.EndpointConfigName
