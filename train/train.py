@@ -30,7 +30,7 @@ xgboost.fit({"train": input_data})
 model_data = xgboost.model_data
 print(model_data)
 
-with open("../deploy/paramters.json", "r") as f:
+with open("../deploy/parameters.json", "r") as f:
     parameters = json.load(f)
 
 parameters["Parameters"]["ModelDataUrl"] = model_data
